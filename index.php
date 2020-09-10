@@ -1,37 +1,38 @@
 <?php  
 
-class mobil {
+class Mobil {
 	public $merk, $tipe, $mesin, $max_speed;
 	public function cetakTipe(){
 		return $this->tipe;
 		}
 		function kecepatanMaksimal(){
 			return "Kecepatan Maksimal Dari Mobil Ini Adalah".$this->max_speed;
-	
+		}
+}
+
+class BMW extends Mobil {
+
+}
+
+class Dacia extends Mobil{
+	function selfParking(){
+		echo "Parkir Sendiri";
 	}
 }
 
 $bmw = new Mobil;
-$bmw ->merk = "BMW";
-$bmw ->tipe = "320i";
-$bmw ->mesin = "2000cc";
-$bmw ->max_speed = "280 km/h";
+$bmw->merk = "BMW";
+$bmw->tipe = "320i";
+$bmw->mesin = "2000cc";
+$bmw->max_speed = "280 km/h";
 
-$bmw2 = new Mobil;
-$bmw2->merk = "BMW";
-$bmw2->tipe = "320i";
-$bmw2->mesin = "2000cc";
-$bmw2->max_speed = "280 km/h";
+$Dacia = new Mobil;
+$Dacia->merk = "Daihatsu";
+$Dacia->tipe = "Model-A";
+$Dacia->mesin = "1500cc";
+$Dacia->max_speed = "200 km/h";
 
-echo "$bmw2->tipe";
-echo "<br>";
-echo "$bmw2->tipe";
-
-if ($bmw === $bmw2){
-	echo "sama";
-}else{
-	echo "tidak";
-}
+echo $Dacia->kecepatanMaksimal();
 
 
 
